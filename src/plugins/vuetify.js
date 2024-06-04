@@ -4,13 +4,14 @@ import "vuetify/styles";
 
 // Vuetify
 import { createVuetify } from "vuetify";
+import { aliases, mdi } from 'vuetify/iconsets/mdi';
 
 const OCTheme = {
   dark: false,
   colors: {
-    primary: "#80162B",
+    primary: "#6402BF",
     secondary: "#E1E1E1",
-    accent: "#47121D",
+    accent: "#c9a2eb",
     success: "#47121D",
     error: "#EE5044",
     teal: "#63BAC0",
@@ -25,6 +26,13 @@ export default createVuetify({
     defaultTheme: "OCTheme",
     themes: {
       OCTheme,
+    },
+  },
+  icons: {
+    defaultSet: 'mdi',
+    aliases,
+    sets: {
+      mdi,
     },
   },
 });

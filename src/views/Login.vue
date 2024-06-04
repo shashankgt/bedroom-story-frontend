@@ -48,7 +48,7 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
 import { useRouter } from 'vue-router';
 import UserServices from '../services/UserServices';
 
@@ -68,6 +68,7 @@ const login = async () => {
     }
     await UserServices.loginUser(user).then((res)=> {
         localStorage.setItem("user", JSON.stringify(res.data));
+        localStorage.setItem("isAdmin", JSON.stringify(res.data.hasAdminAccess));
         snackbar.value.value = true;
         snackbar.value.color = "green";
         snackbar.value.text = "Login successful!";
@@ -83,6 +84,13 @@ function closeSnackBar() {
   snackbar.value.value = false;
 }
 
+onMounted(()=> {
+  const userFromLocal = JSON.parse(localStorage.getItem('user'));
+  if(userFromLocal) {
+    router.push({ name: "Home"});
+  } 
+})
+
 </script>
 
 <style scoped>
@@ -90,14 +98,14 @@ function closeSnackBar() {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: calc(100vh - 120px); /* Adjusted height to consider the header and footer */
+  height: calc(100vh - 120px);
   background-color: #f5f5f5;
 }
 .login-btn {
-  background-color: #792fd3b0 !important; /* Custom color for the button */
-  color: white !important; /* Ensure text is white for contrast */
+  background-color: #792fd3b0 !important;
+  color: white !important;
 }
 .custom-text-field:focus {
-  background-color: #d0b7ee59 !important; /* Custom background color when focused */
+  background-color: #d0b7ee59 !important;
 }
 </style>

@@ -80,6 +80,7 @@ const signUp = async () => {
     fullName: fullName.value,
   })
     .then((res) => {
+      localStorage.setItem("isAdmin", JSON.stringify(hasAdminAccess.value));
       router.push("/login");
     })
     .catch((err) => {
@@ -101,14 +102,14 @@ function closeSnackBar() {
   justify-content: center;
   height: calc(
     100vh - 120px
-  ); /* Adjusted height to consider the header and footer */
+  );
   background-color: #f5f5f5;
 }
 .signup-btn {
-  background-color: #792fd3b0 !important; /* Custom color for the button */
-  color: white !important; /* Ensure text is white for contrast */
+  background-color: #792fd3b0 !important;
+  color: white !important;
 }
 .custom-text-field:focus {
-  background-color: #d0b7ee59 !important; /* Custom background color when focused */
+  background-color: #d0b7ee59 !important;
 }
 </style>

@@ -42,10 +42,13 @@ const user = ref(null);
 const adminCards = [
   { title: 'Create Stories', description: 'Start creating new stories here', route: '/generate-stories' },
   { title: 'Story Collection', description: 'View and manage your stories', route: '/story-collection' },
-  { title: 'Language', description: 'Manage languages', route: '/languages' },
-  { title: 'Theme', description: 'Manage themes', route: '/theme' },
-  { title: 'Genre', description: 'Manage genres',route: '/genre' }
+  { title: 'Languages', description: 'Manage languages', route: '/languages' },
+  { title: 'Themes', description: 'Manage themes', route: '/themes' },
+  { title: 'Genres', description: 'Manage genres',route: '/genres' },
+  { title: 'Roles', description: 'Manage roles',route: '/roles' },
+  { title: 'Settings', description: 'Manage settings',route: '/settings' }
 ];
+
 const nonAdminCards = [
   { title: 'Create Stories', description: 'Start creating new stories here', route: '/generate-stories' },
   { title: 'Story Collection', description: 'View and manage your stories', route: '/story-collection' }

@@ -11,7 +11,7 @@ export default {
         return apiClient.post("themes", theme);
     },
     updateTheme(theme) {
-        return apiClient.put("themes/" + theme.id, theme);
+        return apiClient.put("themes/" + theme.themeId, theme);
     },
     deleteTheme(themeId) {
         return apiClient.delete("themes/" + themeId);

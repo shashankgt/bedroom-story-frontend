@@ -13,7 +13,7 @@
                 <v-btn icon @click="editSetting(setting)">
                   <v-icon>mdi-pencil</v-icon>
                 </v-btn>
-                <v-btn icon @click="deleteSetting(setting.settingId)">
+                <v-btn icon @click="deleteSetting(setting.id)">
                   <v-icon>mdi-delete</v-icon>
                 </v-btn>
               </div>

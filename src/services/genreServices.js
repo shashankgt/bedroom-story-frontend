@@ -11,7 +11,7 @@ export default {
         return apiClient.post("genres", genre);
     },
     updateGenre(genre) {
-        return apiClient.put("genres/" + genre.id, genre);
+        return apiClient.put("genres/" + genre.genreId, genre);
     },
     deleteGenre(genreId) {
         return apiClient.delete("genres/" + genreId);

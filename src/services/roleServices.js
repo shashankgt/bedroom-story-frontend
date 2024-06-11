@@ -11,7 +11,7 @@ export default {
         return apiClient.post("roles/", role);
     },
     updateRole(role) {
-        return apiClient.put("roles/" + role.id, role);
+        return apiClient.put("roles/" + role.roleId, role);
     },
     deleteRole(roleId) {
         return apiClient.delete("roles/" + roleId);

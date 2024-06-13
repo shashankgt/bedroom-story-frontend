@@ -14,7 +14,7 @@ export default {
         return apiClient.post("stories/", story);
     },
     updateStory(story) {
-        return apiClient.put("stories/" + story.storyId, story);
+        return apiClient.put("stories/" + story.id, story);
     },
     deleteStory(storyId) {
         return apiClient.delete("stories/" + storyId);

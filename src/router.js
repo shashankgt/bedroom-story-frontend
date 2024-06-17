@@ -10,6 +10,7 @@ import Themes from './views/Themes.vue';
 import Genres from './views/Genres.vue';
 import Roles from './views/Roles.vue';
 import Settings from './views/Settings.vue';
+import UserStoryCollection from './views/User-Story-Collection.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -72,6 +73,11 @@ const router = createRouter({
       path: '/settings',
       name: 'settings',
       component: Settings
+    },
+    {
+      path: '/user-story-collection',
+      name: 'user-story-collection',
+      component: UserStoryCollection
     },
   ],
 });

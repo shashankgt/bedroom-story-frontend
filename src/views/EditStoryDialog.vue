@@ -77,7 +77,7 @@ const selectedLanguage = ref(props.story?.language?.languageName || '');
 const selectedTheme = ref(props.story?.theme?.themeName || '');
 const selectedRole = ref(props.story?.role?.roleName || '');
 const selectedSettings = ref(props.story?.settings?.name || '');
-const selectedSize = ref(props.story?.size || '');
+const selectedSize = ref(props.story?.size?.sizeName || '');
 
 const genres = ref([]);
 const languages = ref([]);
@@ -119,7 +119,7 @@ const submitForm = async () => {
     language: selectedLanguage.value,
     theme: selectedTheme.value,
     role: selectedRole.value,
-    settings: selectedSettings.value,
+    setting: selectedSettings.value,
     size: selectedSize.value
   };
 
@@ -153,7 +153,7 @@ watch(
     selectedTheme.value = newStory?.theme?.themeName || '';
     selectedRole.value = newStory?.role?.roleName || '';
     selectedSettings.value = newStory?.settings?.name || '';
-    selectedSize.value = newStory?.size || '';
+    selectedSize.value = newStory?.size?.sizeName || '';
   },
   { immediate: true }
 );

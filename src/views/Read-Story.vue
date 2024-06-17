@@ -5,6 +5,7 @@
       <div v-if="isLoading" class="loading">Loading...</div>
       <div v-else class="story-box">
         <div class="icons">
+          <v-icon class="editIcon" @click="generatePdf">mdi-file-pdf-box</v-icon>
           <v-icon @click="openEditDialog" class="editIcon">mdi-pencil</v-icon>
           <v-icon @click="openDeleteDialog" class="deleteIcon">mdi-delete</v-icon>
         </div>
@@ -48,6 +49,7 @@ import { useRoute, useRouter } from 'vue-router';
 import storyServices from "../services/storyServices";
 import EditStoryDialog from './EditStoryDialog.vue';
 import DeleteStoryDialog from './DeleteStoryDialog.vue';
+import html2pdf from 'html2pdf.js';
 
 const isLoading = ref(true);
 const story = ref(null);
@@ -102,6 +104,19 @@ const redirectToCreateStories = () => {
   showSuccessDialog.value = false;
   router.push({ name: 'story-collection' });
 };
+
+const generatePdf = () => {
+  const element = document.querySelector(".read-story");
+  const opt = {
+    margin:       0.5,
+    filename:     `story.pdf`,
+    image:        { type: 'jpeg', quality: 0.98 },
+    html2canvas:  { scale: 2 },
+    jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
+  };
+  html2pdf().from(element).set(opt).save();
+};
+
 </script>
 
 <style scoped>

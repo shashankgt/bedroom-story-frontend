@@ -42,6 +42,7 @@ const user = ref(null);
 const adminCards = [
   { title: 'Create Stories', description: 'Start creating new stories here', route: '/generate-stories' },
   { title: 'Story Collection', description: 'View and manage your stories', route: '/story-collection' },
+  { title: 'User Story Collection', description: "View and manage user's stories", route: '/user-story-collection' },
   { title: 'Languages', description: 'Manage languages', route: '/languages' },
   { title: 'Themes', description: 'Manage themes', route: '/themes' },
   { title: 'Genres', description: 'Manage genres',route: '/genres' },
